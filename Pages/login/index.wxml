@@ -1,0 +1,6 @@
+<nav>
+  <view class="login">
+    <button bindtap="toClipPage">去裁剪页面</button>
+  </view>
+</nav>
+

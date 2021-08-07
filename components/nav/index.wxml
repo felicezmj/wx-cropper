@@ -1,0 +1,6 @@
+<view class="nav" style="width: 100%;height: {{navBarHeight}}rpx;">
+  <view class="head">demoHead</view>
+</view>
+<view class="page" style="top: {{navBarHeight}}rpx;width: 100%;height: 100%;">
+  <slot></slot>
+</view>

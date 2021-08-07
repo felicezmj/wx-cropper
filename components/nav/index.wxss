@@ -1,0 +1,9 @@
+.nav {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.nav .head {
+  margin-bottom: 20rpx;
+}

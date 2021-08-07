@@ -1,0 +1,20 @@
+<view class="cropper-container">
+  <view 
+    class="cropper-wrap"
+    catchtouchstart="touchStart" 
+    catchtouchmove="touchMove"
+    catchtouchend="touchEnd"
+  >
+    <canvas
+      type="2d"
+      id="canvas"
+      style="width: {{cvs.width}}px;height: {{cvs.height}}px;"
+      ></canvas>
+      <canvas
+        hidden="{{true}}"
+        type="2d"
+        id="clip-canvas"
+        style="width: {{300}}px;height: {{150}}px;"
+        ></canvas>
+  </view>
+</view>

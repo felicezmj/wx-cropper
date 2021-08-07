@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "cropper": "../../components/cropper/index",
+    "nav": "../../components/nav/index"
+  },
+  "disableScroll": true
+}

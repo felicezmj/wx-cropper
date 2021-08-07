@@ -1,0 +1,6 @@
+<view class="show-container">
+  <image class="img" src="{{src}}" mode="aspectFit"></image>
+  <view class="back" bindtap="toClip">
+    返回
+  </view>
+</view>

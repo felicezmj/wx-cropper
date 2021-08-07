@@ -1,0 +1,19 @@
+<nav>
+  <view class="show-container">
+    <view 
+      class="canvas" 
+      style="width: {{canvas.width}}px;height:{{canvas.height}}px;">
+      <cropper 
+        class="cropper"
+        src="{{src}}"
+        rotate="{{rotate}}"
+      ></cropper>
+      
+    </view>
+    <view class="foot" style="width: 100%;height: {{150 * screenRatio}}rpx;background-color: pink">
+      <button class="select" size="mini" bindtap="chooseImage">选择照片</button>
+      <button class="rotate" size="mini" bindtap="setRotate">旋转</button>
+      <button class="rotate" size="mini" bindtap="save">保存</button>
+    </view>
+  </view>
+</nav>
