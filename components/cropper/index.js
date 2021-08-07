@@ -383,15 +383,15 @@ Component({
       ctx.drawImage(img, 0, 0, imgW, imgH);
       const getImageData = ctx.getImageData(x, y, w, h);
       let { width: getW, height: getH } = getImageData;
-      console.log(canvas, ctx, ctx.getImageData(x, y, w, h), getW, getH);
+      // console.log(canvas, ctx, ctx.getImageData(x, y, w, h), getW, getH);
       canvas.width = getW;
       canvas.height = getH;
       ctx.putImageData(getImageData, 0, 0);
       const url = canvas.toDataURL('jpeg', .92);
-      wx.redirectTo({
-        url: '../../Pages/previewImage/index?src=' + encodeURIComponent(JSON.stringify(url)),
-      })
-      
+      // wx.redirectTo({
+      //   url: '../../Pages/previewImage/index?src=' + encodeURIComponent(JSON.stringify(url)),
+      // })
+      this.triggerEvent('imgUrl', { url });
     },
     getTouchEndMousePosi(_select) {
       return {

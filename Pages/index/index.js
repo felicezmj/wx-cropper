@@ -53,6 +53,9 @@ Page({
   save() {
     this.cropper.save()
   },
+  getUrl(e) { // 裁剪后的照片资源
+    console.log(e.detail.url)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
