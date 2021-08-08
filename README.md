@@ -15,8 +15,9 @@
   }
   ```
 <h2>2.wxml引用</h2>
-```wxml
-  <view 
+```
+  {
+    template: `<view 
       class="canvas" 
       style="width: {{canvas.width}}px;height:{{canvas.height}}px;">
       <cropper 
@@ -25,9 +26,10 @@
         rotate="{{rotate}}"
         bindimgUrl="getUrl"
       ></cropper>
-    </view>
+    </view>`
+    }
 ```
-<h2>3.js</h2>
+<h2>3.数据</h2>
 ```
     {
       data: {
@@ -41,7 +43,7 @@
       },
     }
 ```
-<br/>
+<h2>3.js方法</h2>
  ```
 <div>
     this.ctx = wx.createCameraContext();
