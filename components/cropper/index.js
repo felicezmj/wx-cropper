@@ -151,15 +151,25 @@ Component({
     getMousePosi(x, y, w, h) {
       // 四个点 四条边
       return [ 
-        [ x - 4, y - 4, 8, 8 ],
-        [ x + w - 4, y - 4, 8, 8 ],
-        [ x + w - 4, y + h - 4, 8, 8 ],
-        [ x - 4, y + h - 4, 8, 8 ],
-        [ x - 4, y - 4, w + 4, 8 ],
-        [ x + w - 4, y - 4, 8, h + 4 ],
-        [ x - 4, y + h - 4, w + 4, 8 ],
-        [ x - 4, y - 4, 8, h + 4 ],
-        [ x - 8, y - 8, w - 8, h - 8 ]
+        // [ x - 4, y - 4, 8, 8 ],
+        // [ x + w - 4, y - 4, 8, 8 ],
+        // [ x + w - 4, y + h - 4, 8, 8 ],
+        // [ x - 4, y + h - 4, 8, 8 ],
+        // [ x - 4, y - 4, w + 4, 8 ],
+        // [ x + w - 4, y - 4, 8, h + 4 ],
+        // [ x - 4, y + h - 4, w + 4, 8 ],
+        // [ x - 4, y - 4, 8, h + 4 ],
+        // [ x - 8, y - 8, w - 8, h - 8 ]
+        
+        [ x, y, 15, 15 ],
+        [ x + w - 15, y, 15, 15 ],
+        [ x + w - 15, y + h - 15, 15, 15 ],
+        [ x, y + h - 15, 15, 15 ],
+        [ x + 15, y, w - 15, 15 ],
+        [ x + w - 15, y + 15, 15, h - 15 ],
+        [ x + 15, y + h - 15, w - 15, 15 ],
+        [ x, y + 15, 15, h - 15 ],
+        [ x + 15, y + 15, w - 15, h - 15 ]
        ]
     },
     drawImage() {
@@ -217,7 +227,6 @@ Component({
           return i;
         }
       }
-      return 5;
     },
     checkPath(x, y, rect) {
       this.ctx.beginPath();
@@ -254,8 +263,10 @@ Component({
       _select.y < 0 && (_select.y = 0);
       _select.w < 50 && (_select.w = 50);
       _select.h < 50 && (_select.h = 50);
-      _select.x + _select.w >= canvasWidth && (_select.x -= (_select.x + _select.w - canvasWidth));
-      _select.y + _select.h >= canvasHeight && (_select.y -= (_select.y + _select.h - canvasHeight));
+      _select.x + _select.w >= canvasWidth && (_select.w -=  (_select.x + _select.w - canvasWidth));
+      // _select.x + _select.w >= canvasWidth && (_select.x -= (_select.x + _select.w - canvasWidth));
+      // _select.y + _select.h >= canvasHeight && (_select.y -= (_select.y + _select.h - canvasHeight));
+      _select.y + _select.h >= canvasHeight && (_select.h -= (_select.y + _select.h - canvasHeight));
       return _select;
     },
     getNewSelectPosi(i, select, distance) {
@@ -325,6 +336,8 @@ Component({
         this.ctx.save();
         this.ctx.fillStyle = '#5696f8';
         this.ctx.fillRect(...item);
+        // this.ctx.strokeStyle = '#5696f8';
+        // this.ctx.strokeRect(...item);
         this.ctx.restore();
       })
       this.ctx.restore();
@@ -333,14 +346,23 @@ Component({
     },
     getOperatePoint(x, y, w, h) {
       return [ 
-        [ x - 4, y - 4, 8, 8 ],
-        [ x + w - 4, y - 4, 8, 8 ],
-        [ x + w - 4, y + h - 4, 8, 8 ],
-        [ x - 4, y + h - 4, 8, 8 ],
-        [ x + w / 2 - 4, y - 4, 8, 8 ],
-        [ x + w - 4, y + h / 2 - 4, 8, 8 ],
-        [ x + w / 2 - 4, y + h - 4, 8, 8 ],
-        [ x - 4, y + h / 2 - 4, 8, 8 ]
+        // [ x - 4, y - 4, 8, 8 ],
+        // [ x + w - 4, y - 4, 8, 8 ],
+        // [ x + w - 4, y + h - 4, 8, 8 ],
+        // [ x - 4, y + h - 4, 8, 8 ],
+        // [ x + w / 2 - 4, y - 4, 8, 8 ],
+        // [ x + w - 4, y + h / 2 - 4, 8, 8 ],
+        // [ x + w / 2 - 4, y + h - 4, 8, 8 ],
+        // [ x - 4, y + h / 2 - 4, 8, 8 ]
+
+        [ x, y, 8, 8 ], // 0
+        [ x + w - 8, y, 8, 8 ], // 1
+        [ x + w - 8, y + h - 8, 8, 8 ], // 2
+        [ x, y + h - 8, 8, 8 ], // 3
+        [ x + w / 2 - 8, y, 8, 8 ], // 4
+        [ x + w - 8, y + h / 2 - 4, 8, 8 ], // 5
+        [ x + w / 2 - 8, y + h - 8, 8, 8 ], // 6
+        [ x, y + h / 2 - 4, 8, 8 ] // 7
        ]
     },
     touchEnd(e) {
@@ -388,9 +410,9 @@ Component({
       canvas.height = getH;
       ctx.putImageData(getImageData, 0, 0);
       const url = canvas.toDataURL('jpeg', .92);
-      // wx.redirectTo({
-      //   url: '../../Pages/previewImage/index?src=' + encodeURIComponent(JSON.stringify(url)),
-      // })
+      wx.redirectTo({
+        url: '../../Pages/previewImage/index?src=' + encodeURIComponent(JSON.stringify(url)),
+      })
       this.triggerEvent('imgUrl', { url });
     },
     getTouchEndMousePosi(_select) {
