@@ -30,4 +30,4 @@
     }
 ```
 <h2>3.数据</h2>
-</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/4.jpeg" width = "200" height = "300" alt="图片名称" align=center />
+</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/js1.jpeg" width = "200" height = "300" alt="图片名称" align=center />
