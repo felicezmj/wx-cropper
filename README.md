@@ -14,8 +14,10 @@
     "disableScroll": true
   }
   ```
-<h2>2.wxml引用</h2>
+  <h2>2.目录</h2>
+  </br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/src.jpeg" width = "800" height = "300" alt="图片名称" align=center />
+<h2>3.wxml引用</h2>
 </br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/use.jpeg" width = "800" height = "300" alt="图片名称" align=center />
-<h2>3.js</h2>
+<h2>4.js</h2>
 </br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/js1.jpeg" width = "800" height = "300" alt="图片名称" align=center />
-</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/js2.jpeg" width = "800" height = "300" alt="图片名称" align=center />
+</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/js2.jpeg" width = "800" height = "900" alt="图片名称" align=center />
