@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    screenRatio: getApp().data.screenRatio,
     src: '',
     canvas: {
       width: wx.getSystemInfoSync().windowWidth,

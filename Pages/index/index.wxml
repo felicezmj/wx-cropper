@@ -9,7 +9,6 @@
         rotate="{{rotate}}"
         bindimgUrl="getUrl"
       ></cropper>
-      
     </view>
     <view class="foot" style="width: 100%;height: {{150 * screenRatio}}rpx;background-color: pink">
       <button class="select" size="mini" bindtap="chooseImage">选择照片</button>

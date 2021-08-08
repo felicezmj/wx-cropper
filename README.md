@@ -15,68 +15,7 @@
   }
   ```
 <h2>2.wxml引用</h2>
-```wxml
-  <view 
-      class="canvas" 
-      style="width: {{canvas.width}}px;height:{{canvas.height}}px;">
-      <cropper 
-        class="cropper"
-        src="{{src}}"
-        rotate="{{rotate}}"
-        bindimgUrl="getUrl"
-      ></cropper>
-    </view>
-```
+</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/use.jpeg" width = "800" height = "300" alt="图片名称" align=center />
 <h2>3.js</h2>
-```
-    {
-      data: {
-        src: '',
-        canvas: {
-          width: wx.getSystemInfoSync().windowWidth,
-          height: wx.getSystemInfoSync().windowHeight - 150 - getApp().data.navBarHeight,
-        },
-        screenRatio: getApp().data.screenRatio,
-        rotate: 0
-      },
-    }
-```
-<br/>
- ```
-<div>
-    this.ctx = wx.createCameraContext();
-    this.cropper = this.selectComponent(".cropper");
-    chooseImage() {
-        let _self = this;
-        wx.chooseImage({
-          count: 1,
-          sizeType: ['original', 'compressed'],
-          sourceType: ['album', 'camera'],
-          success (res) {
-            const tempFilePaths = res.tempFilePaths[0];
-            _self.setData({
-              src: tempFilePaths
-            })
-            _self.cropper.init(tempFilePaths)
-          }
-        })
-      },
-      canvasInit() {
-        const query = 
-              query.select('.cropper');
-              console.log(query.select('#my-canvas'))
-      },
-      setRotate() {
-        let { rotate } = this.data;
-        this.setData({
-          rotate: rotate === 270 ? 0 : rotate + 90
-        })
-      },
-      save() {
-        this.cropper.save()
-      },
-      getUrl(e) { 
-        console.log(e.detail.url)
-      }
-</div>
- ```
+</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/js1.jpeg" width = "800" height = "300" alt="图片名称" align=center />
+</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/js2.jpeg" width = "800" height = "300" alt="图片名称" align=center />
