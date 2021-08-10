@@ -15,7 +15,7 @@
   }
   ```
 <h2>2.目录</h2>
-</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/src.jpeg" width = "800" height = "500" alt="图片名称" align=center />
+</br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/src.jpeg" width = "800" height = "700" alt="图片名称" align=center />
 
 <h2>3.wxml引用</h2>
 </br><img src="https://github.com/felicezmj/wx-cropper/blob/main/demoimg/use.jpeg" width = "800" height = "300" alt="图片名称" align=center />
